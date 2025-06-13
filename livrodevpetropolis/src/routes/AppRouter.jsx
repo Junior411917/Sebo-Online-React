@@ -1,18 +1,18 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Feed from '../pages/Feed'
-import Posts from '../pages/Posts'
-import Update from '../pages/Update'
-import More from '../pages/More'
+import { Routes, Route } from 'react-router-dom';
+import Inicio from '../pages/início';
+import Autores from '../pages/Autores';
+import Posts from '../pages/Posts';
+import Update from '../pages/Update';
+import Error from '../pages/Error';
 
 export default function AppRouter() {
   return (
     <Routes>
-        <Route path={'/'} element={<Feed/>}></Route>
-        <Route path={'/posts'} element={<Posts/>}></Route>
-        <Route path={'/update/:id'} element={<Update/>}></Route>
-        <Route path={'/more/:id'} element={<More/>}></Route>
-        <Route path={'*'} element={<Error/>}></Route>
+      <Route path="/" element={<Inicio />} />
+      <Route path="/autores" element={<Autores />} />
+      <Route path="/posts" element={<Posts />} />
+      <Route path="/update" element={<Update />} />
+      <Route path="*" element={<Error />} />
     </Routes>
-  )
+  );
 }

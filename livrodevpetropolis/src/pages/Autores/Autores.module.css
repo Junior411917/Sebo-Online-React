@@ -1,0 +1,38 @@
+.container {
+  margin-top: 50px;
+  text-align: center;
+  border: 1px solid #333;
+  border-radius: 30px;
+  padding: 40px;
+  width: 400px;
+  margin: 80px auto;
+  background-color: var(--fundo-claro);
+  color: var(--texto-claro);
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px;
+  background-color: #487be2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.voltar {
+  background: none;
+  border: none;
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
