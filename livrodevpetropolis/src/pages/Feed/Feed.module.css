@@ -1,11 +1,7 @@
 main header {
   display: flex;
 }
-.cards .card h2 {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 500px;
-}
+
 img {
   width: 20px;
   margin-left: 40px;
@@ -18,10 +14,12 @@ img {
 }
 main .cards {
   display: flex;
+  color: white;
   justify-content: center;
   flex-direction: column;
   margin-top: 1rem;
 }
+
 main .cards .card {
   margin: 0 auto;
   background-color: #2f3644;
@@ -30,6 +28,7 @@ main .cards .card {
   border-radius: 7px;
   margin-top: 40px;
 }
+
 .cards .card header {
   display: flex;
   justify-content: space-between;
@@ -40,6 +39,22 @@ main .cards .card {
   font-weight: 700;
   color: #d2daf5;
   font-size: 1.7rem;
+}
+.bookInfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.bookBlock,
+.priceBlock {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  width: 45%;
 }
 .line {
   background-color: #3e445b;
@@ -71,13 +86,13 @@ p {
   padding: 5px 40px;
 }
 .btnEdit button {
-  background-color: #80d8ff;
+  background-color: #dc9908;
 }
 .btnReadMore button {
-  background-color: #3decb1;
+  background-color: #b3cbe7;
 }
 .btnDelete button {
-  background-color: rgb(241, 45, 45);
+  background-color: rgb(13, 163, 45);
 }
 .loading {
   height: 100vh;

@@ -5,9 +5,8 @@ export default function HeaderMain() {
   return (
     <header>
       <div className={styles.container}>
-        
         <div className={styles.logo}>
-          <h1>Postagens Diversas</h1>
+          <h1>Livraria Dev Petrópolis</h1>
         </div>
 
         <div className={styles.btnNewPost}>
@@ -15,7 +14,6 @@ export default function HeaderMain() {
             <button>Novo Post</button>
           </Link>
         </div>
-
       </div>
     </header>
   );
