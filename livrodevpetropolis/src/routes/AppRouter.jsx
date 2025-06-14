@@ -6,18 +6,21 @@ import Update from "../pages/Update";
 import Error from "../pages/Error";
 import Feed from "../pages/Feed";
 import More from "../pages/More";
+import Detalhes from '../pages/Detalhes'
+
 
 export default function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<Inicio />} />
-      <Route path="/autores" element={<Autores />} />
-      <Route path="/posts" element={<Posts />} />
-      <Route path="*" element={<Error />} />
+      <Route path={"/"} element={<Inicio />} />
+      <Route path={"/autores"} element={<Autores />} />
+      <Route path={"/posts"} element={<Posts />} />
+      <Route path={"*"} element={<Error />} />
       <Route path={"/update/:id"} element={<Update />}></Route>
-      <Route path={"/more/:id"} element={<More />}></Route>
-      <Route path={"*"} element={<Error />}></Route>
+    
       <Route path={"/feed"} element={<Feed />}></Route>
+        <Route path={'/detalhes'} element={<Detalhes/>}></Route>
+
     </Routes>
   );
 }
