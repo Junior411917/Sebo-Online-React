@@ -7,6 +7,8 @@ import Error from "../pages/Error";
 import Feed from "../pages/Feed";
 import More from "../pages/More";
 import Detalhes from '../pages/Detalhes'
+import Login from '../pages/Login'
+
 
 
 export default function AppRouter() {
@@ -17,10 +19,10 @@ export default function AppRouter() {
       <Route path={"/posts"} element={<Posts />} />
       <Route path={"*"} element={<Error />} />
       <Route path={"/update/:id"} element={<Update />}></Route>
-    
       <Route path={"/feed"} element={<Feed />}></Route>
-        <Route path={'/detalhes'} element={<Detalhes/>}></Route>
-
+      <Route path={'/detalhes'} element={<Detalhes/>}></Route>
+      <Route path={'/login'} element={<Login/>}></Route>
+      <Route path={'/more'} element={<More/>}></Route>
     </Routes>
   );
 }
