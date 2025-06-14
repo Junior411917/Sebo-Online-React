@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #007bff;
-  --primary-hover: #0056b3;
-  --text-color: #444;
+  --primary-color: #8b4513;
+  --primary-hover: #a0522d;
+  --text-color: #2f1b14;
   --error-color: #c00;
   --border-radius: 10px;
-  --bg-color: #ffffff;
+  --bg-color: #deb887;
 }
 
 body {
@@ -30,7 +30,6 @@ body {
   object-fit: contain;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
-
 
 .formWrapper h2 {
   text-align: center;
@@ -58,7 +57,7 @@ body {
 .field input,
 .field select {
   padding: 0.75rem;
-  border: 1px solid #000;
+  border: 1px solid #8b4513;
   border-radius: 6px;
   font-size: 1rem;
 }
@@ -77,7 +76,7 @@ body {
 
 .actions button {
   background-color: var(--primary-color);
-  color: #fff;
+  color: #f5f5dc;
   padding: 0.75rem 1.4rem;
   border: none;
   border-radius: 6px;

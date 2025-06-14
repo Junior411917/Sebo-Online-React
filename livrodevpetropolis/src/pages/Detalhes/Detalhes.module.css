@@ -1,7 +1,7 @@
-h1{
+h1 {
   margin-left: 5%;
   margin-bottom: 500px;
-  color: #ffffff;
+  color: #2f1b14;
 }
 .cards {
   display: flex;
@@ -12,8 +12,8 @@ h1{
 }
 
 .card {
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
+  background-color: #f5f5dc;
+  border: 2px solid #8b4513;
   border-radius: 26px;
   padding: 30px;
   width: 600px;
@@ -21,39 +21,38 @@ h1{
 }
 
 .primeiro {
-  background-color: #bdbdbd; 
+  background-color: #deb887;
   padding: 15px;
   border-radius: 12px;
   margin-bottom: 10px;
 }
 
 .segundo {
-  background-color: #b4b6b8; 
-  color: white;
+  background-color: #8b4513;
+  color: #f5f5dc;
   padding: 15px;
   border-radius: 12px;
   margin-bottom: 10px;
 }
 
 .terceiro {
-  background-color: #b6b7b8; 
-  color: white;
+  background-color: #a0522d;
+  color: #f5f5dc;
   padding: 15px;
   border-radius: 12px;
   margin-bottom: 10px;
 }
 
-
 .card p {
-  color: black;
-  margin: 10px ;
+  color: #2f1b14;
+  margin: 10px;
   font-size: 18px;
 }
 .card a {
   font-family: Arial, Helvetica, sans-serif;
   display: block;
-  background-color: #007BFF;
-  color: #fff;
+  background-color: #8b4513;
+  color: #f5f5dc;
   text-align: center;
   padding: 10px;
   border-radius: 8px;
@@ -61,6 +60,5 @@ h1{
 }
 
 .card a:hover {
-  background-color: #062c55;
+  background-color: #a0522d;
 }
-

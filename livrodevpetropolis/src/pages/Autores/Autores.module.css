@@ -1,13 +1,17 @@
 .container {
   margin-top: 50px;
   text-align: center;
-  border: 1px solid #333;
+  border: 1px solid #8b4513;
   border-radius: 30px;
   padding: 40px;
   width: 400px;
   margin: 80px auto;
-  background-color: var(--fundo-claro);
-  color: var(--texto-claro);
+  background-color: #f5f5dc;
+  color: #2f1b14;
+}
+
+h1 {
+  margin-bottom: 10px;
 }
 
 .lista {
@@ -19,8 +23,8 @@
 
 button {
   padding: 10px;
-  background-color: #487be2;
-  color: white;
+  background-color: #8b4513;
+  color: #f5f5dc;
   border: none;
   border-radius: 6px;
   font-weight: bold;
