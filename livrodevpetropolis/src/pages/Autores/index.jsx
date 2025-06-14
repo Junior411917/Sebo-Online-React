@@ -1,20 +1,21 @@
+import Header from '../../components/Header';
 import styles from './Autores.module.css';
-import { useNavigate } from 'react-router-dom';
 
 export default function Autores() {
-  const navigate = useNavigate();
 
   return (
+    <div>
+    <Header />
     <div className={styles.container}>
-      <button className={styles.voltar} onClick={() => navigate(-1)}>⬅</button>
       <h1>AUTORES</h1>
       <div className={styles.lista}>
-        <button>RAILLA</button>
-        <button>LUCAS</button>
-        <button>GEOVANI</button>
-        <button>JOSE</button>
-        <button>LEO</button>
+        <button onClick={()=>window.open('https://cataas.com/cat','_blank')}>RAILLA</button>
+        <button onClick={()=>window.open('https://cataas.com/cat','_blank')}>LUCAS</button>
+        <button onClick={()=>window.open('https://placebear.com/300/300','_blank')}>GEOVANI</button>
+        <button onClick={()=>window.open('https://cataas.com/cat','_blank')}>JOSE</button>
+        <button onClick={()=>window.open('https://github.com/LGomes25?tab=repositories','_blank')}>LEO</button>
       </div>
+    </div>
     </div>
   );
 }

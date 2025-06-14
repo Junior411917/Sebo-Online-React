@@ -1,11 +1,10 @@
 import Header from "../../components/Header";
 import { useForm } from "react-hook-form";
-import * as styles from "./Update.module.css";
+import * as styles from "./LivroPost.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object().shape({
   nome: yup.string().required("Informe o nome do livro"),
@@ -17,64 +16,40 @@ const validationSchema = yup.object().shape({
     .required("Informe o preço"),
   idCategoria: yup
     .number()
-    .typeError("Digite um número válido")
+    .typeError("Digite apenas o número da categoria")
     .required("Informe a categoria"),
 });
 
-export default function Update() {
+export default function LivroPost() {
   const navigate = useNavigate();
-  const { id } = useParams();
-  const [livro, setLivro] = useState(null);
-
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm({ resolver: yupResolver(validationSchema) });
 
-  useEffect(() => {
+  const cadastrarLivro = (data) => {
     axios
-      .get(`http://localhost:8080/posts/${id}`)
-      .then((response) => {
-        const data = response.data;
-        setLivro(data);
-        setValue("nome", data.nome);
-        setValue("isbn", data.isbn);
-        setValue("preco", data.preco);
-        setValue("idCategoria", data.idCategoria);
-      })
-      .catch(() => alert("Erro ao buscar os dados do livro"));
-  }, [id, setValue]);
-
-  const atualizarLivro = (data) => {
-    axios
-      .put(`http://localhost:8080/posts/${id}`, data)
+      .post("http://localhost:8080/posts", data)
       .then(() => {
-        alert("Livro atualizado com sucesso!");
+        alert("Livro cadastrado com sucesso!");
         navigate("/");
       })
-      .catch(() => alert("Erro ao atualizar o livro"));
+      .catch(() => alert("Erro ao cadastrar o livro"));
   };
 
   return (
     <div className={styles.container}>
       <Header />
-
-      <img
-        src="src/assets/react.png"
-         alt="Tabela de Gêneros"
-      className={styles.bigImage}
-      />
-
-
-      
-
-        
       <main className={styles.main}>
+        
+        <div className={styles.imageBox}>
+          <img src="src/assets/react.png" />
+        </div>
+
         <section className={styles.formWrapper}>
-          <h2>Editar Livro – DevPetrópolis</h2>
-          <form onSubmit={handleSubmit(atualizarLivro)} className={styles.form}>
+          <h2>Livraria DevPetropolis</h2>
+          <form onSubmit={handleSubmit(cadastrarLivro)} className={styles.form}>
             <div className={styles.field}>
               <label htmlFor="nome">Livro</label>
               <input type="text" id="nome" {...register("nome")} />
@@ -94,7 +69,7 @@ export default function Update() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="idCategoria">Gênero (somente números)</label>
+              <label htmlFor="idCategoria">Gênero (somente número)</label>
               <input type="number" id="idCategoria" {...register("idCategoria")} />
               <span>{errors.idCategoria?.message}</span>
             </div>

@@ -37,8 +37,9 @@ export default function Feed() {
       {posts.map((post) => (
         <main key={post.id}>
           <div className={styles.cards}>
-<<<<<<< HEAD
+
             <div className={styles.card} key={index}>
+              
               <div className={styles.bookInfo}>
                 <h1>Livro</h1>
                 <div className={styles.bookBlock}>{post.nome}</div>
@@ -49,14 +50,6 @@ export default function Feed() {
                 <div className={styles.priceBlock}>{post.preco}</div>
               </div>
 
-=======
-            <div className={styles.card}>
-              <header>
-                <h2>{post.titulo}</h2>
-              </header>
-              <div className={styles.line} />
-              <p>{post.descricao}</p>
->>>>>>> 7cf9f01 (Posts and Update- Atualizaçẽos)
               <div className={styles.btns}>
                 <div className={styles.btnEdit}>
                   <Link to={`/update/${post.id}`}>
@@ -73,8 +66,11 @@ export default function Feed() {
                 <div className={styles.btnDelete}>
                   <button onClick={() => deletePost(post.id)}>Vendido</button>
                 </div>
+
               </div>
+
             </div>
+
           </div>
         </main>
       ))}
