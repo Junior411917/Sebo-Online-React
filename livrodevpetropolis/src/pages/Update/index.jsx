@@ -35,7 +35,7 @@ export default function Update() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/posts/${id}`)
+      .get(`http://localhost:8080/produtos/${id}`)
       .then((response) => {
         const data = response.data;
         setLivro(data);
@@ -49,7 +49,7 @@ export default function Update() {
 
   const atualizarLivro = (data) => {
     axios
-      .put(`http://localhost:8080/posts/${id}`, data)
+      .put(`http://localhost:8080/produtos/${id}`, data)
       .then(() => {
         alert("Livro atualizado com sucesso!");
         navigate("/inicio");

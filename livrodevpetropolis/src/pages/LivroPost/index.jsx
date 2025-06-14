@@ -30,7 +30,7 @@ export default function LivroPost() {
 
   const cadastrarLivro = (data) => {
     axios
-      .post("http://localhost:8080/posts", data)
+      .post("http://localhost:8080/produtos", data)
       .then(() => {
         alert("Livro cadastrado com sucesso!");
         navigate("/");

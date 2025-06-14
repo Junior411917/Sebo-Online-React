@@ -9,7 +9,7 @@ export default function Inicio() {
       <div className={styles.container}>
         <h1>BEM VINDOS AO SEBO</h1>
         <div className={styles.botoes}>
-          <Link to="/feed"><button>LIVROS DISPONÍVEIS</button></Link>
+          <Link to="/disponiveis"><button>LIVROS DISPONÍVEIS</button></Link>
           <Link to="/livropost"><button>INCLUIR NOVOS</button></Link>
           <Link to="/autores"><button>CRÉDITOS</button></Link>
         </div>
