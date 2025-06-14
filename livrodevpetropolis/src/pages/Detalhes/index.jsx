@@ -4,13 +4,13 @@ import * as styles from "./Detalhes.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function More() {
+export default function Detalhes() {
   const [leiaMais, setLeiaMais] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/posts/${id}`)
+      .get(`http://localhost:8080/isbn/${isbn}`)
       .then((response) => {
         setLeiaMais(response.data);
       })
@@ -20,7 +20,9 @@ export default function More() {
   }, []);
 return (
   <div>
+    <h1>teste</h1>
     <Header />
+    <h1>teste1</h1>
     <main>
       <h1>Detalhes</h1>
 
@@ -42,7 +44,7 @@ return (
   <p>{leiaMais.descricao}</p>
   <p><strong>CAPA:</strong></p>
 </div>
-         
+        
           <a href={leiaMais.url_capa} target="" rel="">
             LINK PARA A CAPA
           </a>
