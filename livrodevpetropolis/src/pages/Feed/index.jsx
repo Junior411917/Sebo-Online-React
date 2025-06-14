@@ -38,26 +38,31 @@ export default function Feed() {
         <main>
           <div className={styles.cards}>
             <div className={styles.card} key={index}>
-              <header>
-                <h2>{post.titulo}</h2>
-              </header>
-              <div className={styles.line} />
-              <p>{post.descricao}</p>
+              <div className={styles.bookInfo}>
+                <h1>Livro</h1>
+                <div className={styles.bookBlock}>{post.nome}</div>
+              </div>
+
+              <div className={styles.bookInfo}>
+                <h1>Preço</h1>
+                <div className={styles.priceBlock}>{post.preco}</div>
+              </div>
+
               <div className={styles.btns}>
                 <div className={styles.btnEdit}>
                   <Link to={`/update/${post.id}`}>
-                    <button>Editar</button>
+                    <button>Saiba +</button>
                   </Link>
                 </div>
 
                 <div className={styles.btnReadMore}>
                   <Link to={`/more/${post.id}`}>
-                    <button>Leia mais</button>
+                    <button>Editar</button>
                   </Link>
                 </div>
 
                 <div className={styles.btnDelete}>
-                  <button onClick={() => deletePost(post.id)}>Apagar</button>
+                  <button onClick={() => deletePost(post.id)}>Vendido</button>
                 </div>
               </div>
             </div>
