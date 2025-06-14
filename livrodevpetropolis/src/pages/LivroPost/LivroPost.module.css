@@ -1,8 +1,8 @@
 :root {
   /* Variáveis reutilizáveis para cores e estilos */
-  --primary-color: #007bff;
-  --primary-hover: #0056b3;
-  --text-color: #444;
+  --primary-color: #8b4513;
+  --primary-hover: #a0522d;
+  --text-color: #2f1b14;
   --error-color: #c00;
   --border-radius: 10px;
 }
@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background-color: #fff;
+  background-color: #deb887;
 }
 
 .main {
@@ -38,7 +38,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;}
+  justify-content: center;
+}
 
 .imageBox img {
   /* Garante que a imagem se ajuste bem ao espaço */
@@ -66,7 +67,7 @@ body {
   /* Área do formulário com estilo de cartão */
   flex: 2;
   min-width: 300px;
-  background: #fff;
+  background: #f5f5dc;
   padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 14px rgba(143, 19, 19, 0.1);
@@ -100,7 +101,7 @@ body {
 .field select {
   /* Aparência dos inputs e selects */
   padding: 0.75rem;
-  border: 1px solid #000000;
+  border: 1px solid #8b4513;
   border-radius: 6px;
   font-size: 1rem;
 }
@@ -122,7 +123,7 @@ body {
 .actions button {
   /* Botão bonito, com hover azul escuro */
   background-color: var(--primary-color);
-  color: #fff;
+  color: #f5f5dc;
   padding: 0.75rem 1.4rem;
   border: none;
   border-radius: 6px;
@@ -134,7 +135,6 @@ body {
 .actions button:hover {
   background-color: var(--primary-hover);
 }
-
 
 .logo {
   max-width: 240px;

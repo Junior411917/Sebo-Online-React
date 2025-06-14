@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a365d 0%, #2d3748 50%, #1a202c 100%);
+  background: linear-gradient(135deg, #deb887 0%, #a0522d 50%, #8b4513 100%);
   padding: 20px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 /* Cards container */
@@ -20,7 +20,7 @@
 /* Card de login */
 .loginCard {
   margin: 0 auto;
-  background-color: #2f3644;
+  background-color: #f5f5dc;
   padding: 30px 40px;
   width: 600px;
   border-radius: 7px;
@@ -36,9 +36,9 @@
 }
 
 .header h2 {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 700;
-  color: #4a90e2;
+  color: #8b4513;
   font-size: 1.7rem;
   margin: 0;
   display: flex;
@@ -50,14 +50,14 @@
   margin-top: 20px;
   font-size: 1.2rem;
   max-width: 500px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 500;
-  color: #b3bacf;
+  color: #2f1b14;
 }
 
 /* Linha separadora */
 .line {
-  background-color: #3e445b;
+  background-color: #a0522d;
   height: 2px;
   margin: 15px 0 20px 0;
 }
@@ -79,51 +79,51 @@
 .input {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #3e445b;
+  border: 2px solid #8b4513;
   border-radius: 8px;
   font-size: 16px;
   transition: all 0.3s ease;
-  background: #374151;
-  color: #d2daf5;
+  background: #f5f5dc;
+  color: #2f1b14;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .input:focus {
   outline: none;
-  border-color: #4a90e2;
-  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  border-color: #a0522d;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.2);
 }
 
 .input:disabled {
-  background: #2d3748;
-  color: #718096;
+  background: #deb887;
+  color: #2f1b14;
   cursor: not-allowed;
 }
 
 .input::placeholder {
-  color: #a0aec0;
+  color: #8b4513;
   font-weight: 400;
 }
 
 /* Botão de login */
 .loginBtn {
-  color: rgba(255, 255, 255, 0.938);
+  color: #f5f5dc;
   font-size: 1.3rem;
   border: 0;
   border-radius: 10px;
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-weight: 700;
   cursor: pointer;
   padding: 12px 40px;
   margin-top: 20px;
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
   transition: all 0.3s ease;
   width: 100%;
 }
 
 .loginBtn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #357abd 0%, #2c5aa0 100%);
+  background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
   transform: translateY(-2px);
 }
 
@@ -132,7 +132,7 @@
 }
 
 .loginBtn:disabled {
-  background: #4a5568;
+  background: #deb887;
   cursor: not-allowed;
   transform: none;
 }
@@ -147,7 +147,7 @@
   font-weight: 500;
   border: 1px solid #feb2b2;
   text-align: center;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 /* Footer */
@@ -159,14 +159,14 @@
 .footer p {
   margin: 4px 0;
   font-size: 1rem;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 500;
-  color: #b3bacf;
+  color: #2f1b14;
 }
 
 .footer p:first-child {
   font-weight: 600;
-  color: #d2daf5;
+  color: #8b4513;
 }
 
 /* Loading */
@@ -175,7 +175,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a365d 0%, #2d3748 50%, #1a202c 100%);
+  background: linear-gradient(135deg, #deb887 0%, #a0522d 50%, #8b4513 100%);
 }
 
 /* Responsividade */
@@ -190,26 +190,26 @@
   .container {
     padding: 16px;
   }
-  
+
   .loginCard {
     width: 100%;
     padding: 20px 25px;
     margin-top: 20px;
   }
-  
+
   .header h2 {
     font-size: 1.5rem;
   }
-  
+
   .header p {
     font-size: 1.1rem;
   }
-  
+
   .input {
     padding: 10px 14px;
     font-size: 16px;
   }
-  
+
   .loginBtn {
     padding: 10px 30px;
     font-size: 1.2rem;
