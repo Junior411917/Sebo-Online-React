@@ -1,0 +1,143 @@
+:root {
+  /* Variáveis reutilizáveis para cores e estilos */
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --text-color: #444;
+  --error-color: #c00;
+  --border-radius: 10px;
+}
+
+body {
+  /* Define a fonte principal e remove margens padrão */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.container {
+  /* Ocupa pelo menos a altura total da tela */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.main {
+  /* Alinha conteúdo ao centro e permite quebra de linha */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.imageBox {
+  /* Responsável por exibir a imagem com limite de largura */
+  flex: 1;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;}
+
+.imageBox img {
+  /* Garante que a imagem se ajuste bem ao espaço */
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+}
+
+.categorias {
+  /* Lista de categorias de forma limpa (sem bolinhas) */
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.categorias li {
+  /* Espaçamento entre os itens da lista */
+  margin: 0.4rem 0;
+}
+
+.formWrapper {
+  /* Área do formulário com estilo de cartão */
+  flex: 2;
+  min-width: 300px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 14px rgba(143, 19, 19, 0.1);
+}
+
+.formWrapper h2 {
+  /* Centraliza o título do formulário */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  /* Organiza os campos do formulário em coluna */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  /* Dá destaque ao nome do campo */
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.field input,
+.field select {
+  /* Aparência dos inputs e selects */
+  padding: 0.75rem;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.field span {
+  /* Estilo da mensagem de erro */
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.actions {
+  /* Alinha o botão à direita */
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.actions button {
+  /* Botão bonito, com hover azul escuro */
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: var(--primary-hover);
+}
+
+
+.logo {
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 2rem;
+}

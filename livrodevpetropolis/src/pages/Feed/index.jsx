@@ -34,9 +34,10 @@ export default function Feed() {
   return (
     <div>
       <HeaderMain />
-      {posts.map((post, index) => (
-        <main>
+      {posts.map((post) => (
+        <main key={post.id}>
           <div className={styles.cards}>
+<<<<<<< HEAD
             <div className={styles.card} key={index}>
               <div className={styles.bookInfo}>
                 <h1>Livro</h1>
@@ -48,6 +49,14 @@ export default function Feed() {
                 <div className={styles.priceBlock}>{post.preco}</div>
               </div>
 
+=======
+            <div className={styles.card}>
+              <header>
+                <h2>{post.titulo}</h2>
+              </header>
+              <div className={styles.line} />
+              <p>{post.descricao}</p>
+>>>>>>> 7cf9f01 (Posts and Update- Atualizaçẽos)
               <div className={styles.btns}>
                 <div className={styles.btnEdit}>
                   <Link to={`/update/${post.id}`}>
