@@ -9,8 +9,6 @@ import More from "../pages/More";
 import Detalhes from '../pages/Detalhes'
 import Login from '../pages/Login'
 
-
-
 export default function AppRouter() {
   return (
     <Routes>
@@ -26,3 +24,5 @@ export default function AppRouter() {
     </Routes>
   );
 }
+
+
