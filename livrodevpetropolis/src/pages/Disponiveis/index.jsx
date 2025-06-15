@@ -65,7 +65,7 @@ export default function Disponiveis() {
                 </div>
 
                 <div className={styles.btnReadMore}>
-                  <Link to={`/update/${post.isbn}`}>
+                  <Link to={`/update/${post.id}`}>
                     <button>Editar</button>
                   </Link>
                 </div>

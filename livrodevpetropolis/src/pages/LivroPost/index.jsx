@@ -14,7 +14,7 @@ const validationSchema = yup.object().shape({
     .typeError("Digite um valor numérico")
     .positive("O preço deve ser positivo")
     .required("Informe o preço"),
-  idCategoria: yup
+  categoriaId: yup
     .number()
     .typeError("Digite apenas o número da categoria")
     .required("Informe a categoria"),
@@ -73,9 +73,9 @@ export default function LivroPost() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="idCategoria">Gênero (somente número)</label>
-              <input type="number" id="idCategoria" {...register("idCategoria")} />
-              <span>{errors.idCategoria?.message}</span>
+              <label htmlFor="categoriaId">Gênero (somente número)</label>
+              <input type="number" id="categoriaId" {...register("categoriaId")} />
+              <span>{errors.categoriaId?.message}</span>
             </div>
 
             <div className={styles.actions}>
