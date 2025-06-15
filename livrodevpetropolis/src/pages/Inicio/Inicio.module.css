@@ -34,3 +34,29 @@ button:hover {
 body {
   background-color: #deb887 !important;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 40px 20px;
+    border-radius: 30px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 30px 15px;
+    border-radius: 20px;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+}

@@ -4,31 +4,36 @@ footer {
   text-align: center;
   margin-bottom: -500px;
   background-color: #2f3644;
+  padding: 20px;
 }
 
 .container {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
   height: 100px;
+  padding: 0 20px;
+  flex-wrap: wrap;
 }
 
-.logo p{
+.logo p {
   margin-top: 5px;
   font-size: 13px;
   color: rgb(255, 255, 255);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .btnNewPost {
-  display: flex;            
-  align-items: center;    
-  justify-content: space-between; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 50%;
   text-align: left;
-  gap: 20px;              
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .btnNewPost h5 {
@@ -40,12 +45,36 @@ footer {
   width: 60px;
   border-radius: 50px;
 }
-.btnNewPost h5 {
-  margin-bottom: 10px;
-  color: #ffffff;
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .btnNewPost {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btnNewPost img {
+    width: 50px;
+  }
 }
 
-.btnNewPost img {
-  width: 60px;
-  border-radius: 50px;
+@media (max-width: 480px) {
+  .btnNewPost img {
+    width: 45px;
+  }
+
+  .logo p {
+    font-size: 12px;
+  }
+
+  .btnNewPost h5 {
+    font-size: 14px;
+  }
 }

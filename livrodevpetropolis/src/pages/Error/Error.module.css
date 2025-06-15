@@ -12,3 +12,23 @@ h1 {
   font-size: 2rem;
   color: #8b4513;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}

@@ -44,6 +44,8 @@ main .cards .card {
   display: flex;
   justify-content: space-between;
   margin: 15px 0;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .bookBlock,
@@ -54,7 +56,11 @@ main .cards .card {
   font-weight: bold;
   border-radius: 5px;
   text-align: center;
-  width: 45%;
+  width: 100%;
+  max-width: 45%;
+  min-width: 200px;
+  flex: 1;
+  box-sizing: border-box;
 }
 .line {
   background-color: #a0522d;
@@ -99,4 +105,90 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  main .cards .card {
+    width: 90%;
+    padding: 25px 30px;
+  }
+
+  .card header h2 {
+    font-size: 1.5rem;
+  }
+
+  .btns {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btns button {
+    flex: 1;
+    min-width: 120px;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  img {
+    margin-left: 20px;
+    width: 18px;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .bookInfo {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bookBlock,
+  .priceBlock {
+    max-width: 100%;
+  }
+
+  .card header h2 {
+    font-size: 1.4rem;
+  }
+
+  .btns button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  main .cards .card {
+    padding: 20px;
+  }
+
+  .card header h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btns button {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  img {
+    width: 16px;
+    margin-left: 10px;
+  }
 }
