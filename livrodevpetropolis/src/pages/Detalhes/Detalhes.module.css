@@ -1,25 +1,36 @@
+/* Título */
 h1 {
-  margin-left: 5%;
-  margin-bottom: 500px;
+  margin-left: 0;
+  margin-bottom: 80px;
   color: #2f1b14;
-}
-.cards {
-  display: flex;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
+  text-align: center;
 }
 
+/* Container de todos os cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 20px; /* espaçamento entre cards */
+}
+
+/* Estilo de cada card */
 .card {
   background-color: #f5f5dc;
   border: 2px solid #8b4513;
   border-radius: 26px;
   padding: 30px;
-  width: 600px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
+/* Estilos dos blocos internos do card */
 .primeiro {
   background-color: #deb887;
   padding: 15px;
@@ -45,9 +56,11 @@ h1 {
 
 .card p {
   color: #2f1b14;
-  margin: 10px;
+  margin: 10px 0;
   font-size: 18px;
+  word-wrap: break-word;
 }
+
 .card a {
   font-family: Arial, Helvetica, sans-serif;
   display: block;
@@ -57,8 +70,111 @@ h1 {
   padding: 10px;
   border-radius: 8px;
   margin-top: 10px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .card a:hover {
   background-color: #a0522d;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  .cards {
+    padding: 15px;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 60px;
+  }
+
+  .cards {
+    min-height: auto;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+  }
+
+  .cards {
+    padding: 8px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 98%;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+
+  .card a {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .card a {
+    font-size: 13px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 280px) {
+  h1 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .card a {
+    font-size: 12px;
+    padding: 5px;
+  }
 }
