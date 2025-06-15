@@ -1,14 +1,12 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import  Back  from "../../assets/back-button.svg";
+import * as styles from "./Header.module.css";
 
-export default function Header() {
+export default function HeaderMain() {
   return (
-    <header>
-      <div className="container">
-        <Link to={"/inicio"}>
-          <img src={Back} alt="Voltar" style={{ width: "50px" }} />
-        </Link>
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <h1 className={styles.logo}>Livraria Dev Petrópolis</h1>
+        <Link to="/" className={styles.voltarLogin}>Voltar para login</Link>
       </div>
     </header>
   );

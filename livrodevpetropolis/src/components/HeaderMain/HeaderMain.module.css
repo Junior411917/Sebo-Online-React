@@ -1,32 +1,45 @@
-header {
-  background-color: #2f3644;
+.header {
+  background-color: #2c2f3a;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #a67c52;
 }
+
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
-  height: 100px;
 }
-.logo h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  color: #29ebaa;
-  cursor: pointer;
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00ffaa;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.2s;
 }
-.btnNewPost button {
-  font-size: 1.2rem;
-  font-family: Heebo;
-  font-weight: 700;
-  background-color: #447ce2;
-  border: 0;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
+
+.backButton img {
+  width: 30px;
+  height: 30px;
 }
-.btn-newPost button:hover {
-  transition: 0.2s;
-  background-color: #538af0;
+
+.backButton:hover {
+  transform: scale(1.05);
+}
+
+.title {
+  color: #fff8dc;
+  font-size: 1.3rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+.logo {
+  justify-content: left;
+  align-items: left;
+  color: #00ffaa;
+  font-size: 1.8rem;
+  font-family: 'Segoe UI', sans-serif;
 }
