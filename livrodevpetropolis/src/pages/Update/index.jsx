@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const validationSchema = yup.object().shape({
   nome: yup.string().required("Informe o nome do livro"),
@@ -15,7 +15,7 @@ const validationSchema = yup.object().shape({
     .typeError("Digite um valor numérico")
     .positive("O preço deve ser positivo")
     .required("Informe o preço"),
-  idCategoria: yup
+  categoriaId: yup
     .number()
     .typeError("Digite um número válido")
     .required("Informe a categoria"),
@@ -23,8 +23,7 @@ const validationSchema = yup.object().shape({
 
 export default function Update() {
   const navigate = useNavigate();
-  const { isbn } = useParams();
-  const [livro, setLivro] = useState(null);
+  const { id } = useParams();
 
   const {
     register,
@@ -34,52 +33,37 @@ export default function Update() {
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:8080/produtos/${id}`)
-  //     .then((response) => {
-  //       const data = response.data;
-  //       setLivro(data);
-  //       setValue("nome", data.nome);
-  //       setValue("isbn", data.isbn);
-  //       setValue("preco", data.preco);
-  //       setValue("idCategoria", data.idCategoria);
-  //     })
-  //     .catch(() => alert("Erro ao buscar os dados do livro"));
 
-  //Remover após formatar=============================
-  const mockData = {
-      id: id,
-      nome: "Dom Casmurro",
-      isbn: "978-85-359-0277-5",
-      preco: 25.00,
-      idCategoria: 1
-    };
-    
-    setLivro(mockData);
-    setValue("nome", mockData.nome);
-    setValue("isbn", mockData.isbn);
-    setValue("preco", mockData.preco);
-    setValue("idCategoria", mockData.idCategoria);
-  //Remover acima após formatar=========================
+    const token = localStorage.getItem('token');
+    const headers = token ? { Authorization: `Bearer ${token}`} : {};
+
+    axios
+      .get(`http://localhost:8080/produtos/${id}`, { headers })
+      .then((response) => {
+        const data = response.data;
+
+        setValue("nome", data.nome);
+        setValue("isbn", data.isbn);
+        setValue("preco", data.preco);
+        setValue("categoriaId", data.categoriaId);
+      })
+      .catch(() => alert("Erro ao buscar os dados do livro"));
 
   }, [id, setValue]);
 
-
-
   const atualizarLivro = (data) => {
-  //   axios
-  //     .put(`http://localhost:8080/produtos/${id}`, data)
-  //     .then(() => {
-  //       alert("Livro atualizado com sucesso!");
-  //       navigate("/inicio");
-  //     })
-  //     .catch(() => alert("Erro ao atualizar o livro"));
 
-   //Remover após formatar=============================
-    console.log("Dados para atualizar:", data);
-    alert("Livro atualizado com sucesso! (simulação)");
-    navigate("/disponiveis"); // Redireciona para a lis
-  //Remover acima após formatar=========================
+    const token = localStorage.getItem('token');
+    const headers = token ? { Authorization: `Bearer ${token}`} :{};
+
+    axios
+      .put(`http://localhost:8080/produtos/${id}`, data, { headers })
+      .then(() => {
+        alert("Livro atualizado com sucesso!");
+        navigate("/inicio");
+      })
+      .catch(() => alert("Erro ao atualizar o livro"));
+
   };
 
   return (
@@ -116,9 +100,9 @@ export default function Update() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="idCategoria">Gênero (somente números)</label>
-              <input type="number" id="idCategoria" {...register("idCategoria")} />
-              <span>{errors.idCategoria?.message}</span>
+              <label htmlFor="categoriaId">Gênero (somente números)</label>
+              <input type="number" id="categoriaId" {...register("categoriaId")} />
+              <span>{errors.categoriaId?.message}</span>
             </div>
 
             <div className={styles.actions}>
