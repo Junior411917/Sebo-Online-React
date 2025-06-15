@@ -1,90 +1,55 @@
-main header {
-            display: flex;
-    }
-       .cards .card h2 {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 500px;
-    }
-       img {
-            width: 20px;
-            margin-left: 40px;
-               cursor: pointer;
-    }
-       .modal {
-            width: 80px;
-            height: 100px;
-            background-color: white;
-    }
-       main .cards{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-               margin-top: 1rem;
-    }
-       main .cards .card {
-            margin: 0 auto;
-               background-color: #2F3644;
-               padding: 30px 40px;
-            width: 600px;
-               border-radius: 7px;
-            margin-top: 40px;
-       }
-       .cards .card header {
-            display: flex;
-            justify-content: space-between;
-               margin-bottom: 15px;
-    }
-       .card header h2 {
-            font-family: Noto Sans;
-            font-weight: 700;
-               color: #D2DAF5;
-               font-size: 1.7rem;
-    }
-       .line {
-            background-color: #3E445B;
-            height: 2px;
-    }
-       p {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            
-            max-width: 500px;
-               font-family: Noto Sans;
-            font-weight: 500;
-               color: #B3BACF;
-    }
-       .btns {
-            display: flex;
-            justify-content: space-between;
-               margin-top: 30px;
-    }
-       .btns button {
-            color: rgba(255, 255, 255, 0.938);
-            font-size: 1.3rem;
-            border: 0;
-               border-radius: 10px;
-               font-family: Heebo;
-            font-weight: 700;
-            
-            cursor: pointer;
-               padding: 5px 40px;
-    }
-       .btnEdit button{
-            background-color: #80D8FF;
-    }
-       .btnReadMore button{
-            background-color: #3DECB1;
-            
-    }
-       .btnDelete button{
-            background-color: rgb(241, 45, 45);
-    }
-       .loading {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-    }
-    
-    
+
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backButton {
+ background-color: #4CAF50; 
+  color: #fff; 
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer; 
+  border-radius: 0.5rem; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.2s ease-in-out; 
+}
+
+.backButton:hover {
+  background-color: #3e8e41;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+.voltarLogin {
+  background-color: #666;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.voltarLogin:hover {
+  background-color: #777;
+}
+.backButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+}
