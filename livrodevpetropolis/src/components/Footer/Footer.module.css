@@ -1,32 +1,51 @@
 footer {
+  height: auto;
+  margin-top: 29%;
+  text-align: center;
+  margin-bottom: -500px;
   background-color: #2f3644;
 }
+
 .container {
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
   height: 100px;
 }
-.logo h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  color: #29ebaa;
-  cursor: pointer;
+
+.logo p{
+  margin-top: 5px;
+  font-size: 13px;
+  color: rgb(255, 255, 255);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.btnNewPost button {
-  font-size: 1.2rem;
-  font-family: Heebo;
-  font-weight: 700;
-  background-color: #447ce2;
-  border: 0;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
+
+.btnNewPost {
+  display: flex;            
+  align-items: center;    
+  justify-content: space-between; 
+  width: 50%;
+  text-align: left;
+  gap: 20px;              
 }
-.btn-newPost button:hover {
-  transition: 0.2s;
-  background-color: #538af0;
+
+.btnNewPost h5 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.btnNewPost img {
+  width: 60px;
+  border-radius: 50px;
+}
+.btnNewPost h5 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.btnNewPost img {
+  width: 60px;
+  border-radius: 50px;
 }
