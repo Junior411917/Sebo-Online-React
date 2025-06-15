@@ -6,6 +6,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import CatTable from "../../components/CatTable";
 
 const validationSchema = yup.object().shape({
   nome: yup.string().required("Informe o nome do livro"),
@@ -70,8 +71,8 @@ export default function Update() {
     <div className={styles.container}>
       <Header />
 
-      <div className={styles.imageBox}>
-        <img src="src/assets/react.png" />
+      <div className={styles.tableBox}>
+        <CatTable />
       </div>
 
       

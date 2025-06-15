@@ -21,7 +21,7 @@ body {
 }
 
 /* Imagem grande à esquerda */
-.bigImage {
+.tableBox {
   flex: 1;
   max-width: 200px;
   width: 50%;
