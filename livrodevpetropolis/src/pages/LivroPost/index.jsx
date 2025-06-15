@@ -29,11 +29,15 @@ export default function LivroPost() {
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   const cadastrarLivro = (data) => {
+
+    const token = localStorage.getItem('token');
+    const headers = token ? {Authorization: `Bearer ${token}`} : {};
+
     axios
-      .post("http://localhost:8080/produtos", data)
+      .post("http://localhost:8080/produtos", data, { headers })
       .then(() => {
         alert("Livro cadastrado com sucesso!");
-        navigate("/");
+        navigate("/disponiveis");
       })
       .catch(() => alert("Erro ao cadastrar o livro"));
   };

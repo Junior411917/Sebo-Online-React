@@ -23,7 +23,7 @@ const validationSchema = yup.object().shape({
 
 export default function Update() {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { isbn } = useParams();
   const [livro, setLivro] = useState(null);
 
   const {
@@ -34,27 +34,52 @@ export default function Update() {
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/produtos/${id}`)
-      .then((response) => {
-        const data = response.data;
-        setLivro(data);
-        setValue("nome", data.nome);
-        setValue("isbn", data.isbn);
-        setValue("preco", data.preco);
-        setValue("idCategoria", data.idCategoria);
-      })
-      .catch(() => alert("Erro ao buscar os dados do livro"));
+  //   axios
+  //     .get(`http://localhost:8080/produtos/${id}`)
+  //     .then((response) => {
+  //       const data = response.data;
+  //       setLivro(data);
+  //       setValue("nome", data.nome);
+  //       setValue("isbn", data.isbn);
+  //       setValue("preco", data.preco);
+  //       setValue("idCategoria", data.idCategoria);
+  //     })
+  //     .catch(() => alert("Erro ao buscar os dados do livro"));
+
+  //Remover após formatar=============================
+  const mockData = {
+      id: id,
+      nome: "Dom Casmurro",
+      isbn: "978-85-359-0277-5",
+      preco: 25.00,
+      idCategoria: 1
+    };
+    
+    setLivro(mockData);
+    setValue("nome", mockData.nome);
+    setValue("isbn", mockData.isbn);
+    setValue("preco", mockData.preco);
+    setValue("idCategoria", mockData.idCategoria);
+  //Remover acima após formatar=========================
+
   }, [id, setValue]);
 
+
+
   const atualizarLivro = (data) => {
-    axios
-      .put(`http://localhost:8080/produtos/${id}`, data)
-      .then(() => {
-        alert("Livro atualizado com sucesso!");
-        navigate("/inicio");
-      })
-      .catch(() => alert("Erro ao atualizar o livro"));
+  //   axios
+  //     .put(`http://localhost:8080/produtos/${id}`, data)
+  //     .then(() => {
+  //       alert("Livro atualizado com sucesso!");
+  //       navigate("/inicio");
+  //     })
+  //     .catch(() => alert("Erro ao atualizar o livro"));
+
+   //Remover após formatar=============================
+    console.log("Dados para atualizar:", data);
+    alert("Livro atualizado com sucesso! (simulação)");
+    navigate("/disponiveis"); // Redireciona para a lis
+  //Remover acima após formatar=========================
   };
 
   return (

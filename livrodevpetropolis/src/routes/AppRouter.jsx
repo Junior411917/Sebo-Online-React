@@ -16,7 +16,7 @@ export default function AppRouter() {
       <Route path={"/livropost"} element={<LivroPost />}></Route>
       <Route path={"/disponiveis"} element={<Disponiveis />}></Route>
       <Route path={"/update/:id"} element={<Update />}></Route>
-      <Route path={'/detalhes:id'} element={<Detalhes/>}></Route>
+      <Route path={'/detalhes/:isbn'} element={<Detalhes/>}></Route>
       <Route path={"/autores"} element={<Autores />}></Route>
       <Route path={"*"} element={<Error />}></Route>
     </Routes>

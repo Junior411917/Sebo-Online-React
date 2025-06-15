@@ -4,38 +4,47 @@ import * as styles from "./Disponiveis.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Feed() {
+export default function Disponiveis() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8080/produtos")
-      .then((response) => {
-        setPosts(response.data);
-        console.log(response.data);
-      })
-      .catch(() => {
-        console.error("Deu errado");
-      });
-  }, []);
 
-  function deletePost(id) {
+    const token = localStorage.getItem('token');
+    const headers = token ? { Authorization: `Bearer ${token}`}: {};
+    
     axios
-      .delete(`http://localhost:8080/produtos/${id}`)
-      .then(() => {
-        console.log("Apagado");
-        setPosts(posts.filter((post) => post.id !== id));
-      })
-      .catch(() => {
-        console.error("Não encontrado");
-      });
+    .get("http://localhost:8080/produtos", { headers })
+    .then((response) => {
+      setPosts(response.data);
+      console.log(response.data);
+    })
+    .catch(() => {
+      console.error("Deu errado");
+    });
+  }, []);
+  
+  function deletePost(id) {
+
+    const token = localStorage.getItem('token');
+    const headers = token ? { Authorization: `Bearer ${token}`}: {};
+
+    axios
+    .delete(`http://localhost:8080/produtos/${id}`, { headers })
+    .then(() => {
+      alert("Livro vendido!");
+      console.log("Apagado");
+      setPosts(posts.filter((post) => post.id !== id));
+    })
+    .catch(() => {
+      console.error("Não encontrado");
+    });
   }
 
   return (
     <div>
       <HeaderMain />
       {posts.map((post, index) => (
-        <main>
+        <main key={post.id}>
           <div className={styles.cards}>
             <div className={styles.card} key={index}>
               <div className={styles.bookInfo}>
@@ -50,13 +59,13 @@ export default function Feed() {
 
               <div className={styles.btns}>
                 <div className={styles.btnEdit}>
-                  <Link to={`/detalhes/${post.id}`}>
+                  <Link to={`/detalhes/${post.isbn}`}>
                     <button>Saiba +</button>
                   </Link>
                 </div>
 
                 <div className={styles.btnReadMore}>
-                  <Link to={`/livropost/${post.id}`}>
+                  <Link to={`/update/${post.isbn}`}>
                     <button>Editar</button>
                   </Link>
                 </div>

@@ -6,23 +6,27 @@ import axios from "axios";
 
 export default function Detalhes() {
   const [leiaMais, setLeiaMais] = useState({});
-  const { id } = useParams();
+  const { isbn } = useParams();
 
   useEffect(() => {
+
+    const token = localStorage.getItem('token');
+    const headers = token ? {Authorization: `Bearer ${token}`} : {};
+
     axios
-      .get(`http://localhost:8080/isbn/${isbn}`)
+      .get(`http://localhost:8080/isbn/${isbn}`, { headers })
       .then((response) => {
         setLeiaMais(response.data);
       })
       .catch(() => {
         console.error("Deu problema na requisição");
       });
-  }, []);
+  }, [isbn]);
+
+
 return (
   <div>
-    <h1>teste</h1>
     <Header />
-    <h1>teste1</h1>
     <main>
       <h1>Detalhes</h1>
 
@@ -35,17 +39,17 @@ return (
 
 <div className={styles.segundo}>
   <p><strong>AUTORES:</strong> {leiaMais.autores}</p>
-  <p><strong>ANO:</strong> {leiaMais.data_publicacao}</p>
+  <p><strong>ANO:</strong> {leiaMais.dataPublicacao}</p>
 </div>
 
 <div className={styles.terceiro}>
-  <p><strong>PÁGINAS:</strong> {leiaMais.numero_paginas}</p>
+  <p><strong>PÁGINAS:</strong> {leiaMais.numeroPaginas}</p>
   <p><strong>DESCRIÇÃO:</strong></p>
   <p>{leiaMais.descricao}</p>
   <p><strong>CAPA:</strong></p>
 </div>
         
-          <a href={leiaMais.url_capa} target="" rel="">
+          <a href={leiaMais.urlCapa} target="_blank" rel="">
             LINK PARA A CAPA
           </a>
         </div>
