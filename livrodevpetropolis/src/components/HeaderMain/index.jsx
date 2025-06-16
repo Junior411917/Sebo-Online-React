@@ -11,7 +11,6 @@ export default function Header() {
           <img src={Back} alt="Voltar" />
           <span>Voltar ao Início</span>
         </Link>
-       <h1 className={styles.logo}>Livros Disponíveis</h1>
       </div>
     </header>
   );

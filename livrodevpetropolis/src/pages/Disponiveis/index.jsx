@@ -3,41 +3,40 @@ import HeaderMain from "../../components/HeaderMain";
 import * as styles from "./Disponiveis.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Footer from "../../components/Footer";
 
 export default function Disponiveis() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
-    const token = localStorage.getItem('token');
-    const headers = token ? { Authorization: `Bearer ${token}`}: {};
-    
     axios
-    .get("http://localhost:8080/produtos", { headers })
-    .then((response) => {
-      setPosts(response.data);
-      console.log(response.data);
-    })
-    .catch(() => {
-      console.error("Deu errado");
-    });
+      .get("http://localhost:8080/produtos", { headers })
+      .then((response) => {
+        setPosts(response.data);
+        console.log(response.data);
+      })
+      .catch(() => {
+        console.error("Deu errado");
+      });
   }, []);
-  
-  function deletePost(id) {
 
-    const token = localStorage.getItem('token');
-    const headers = token ? { Authorization: `Bearer ${token}`}: {};
+  function deletePost(id) {
+    const token = localStorage.getItem("token");
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
     axios
-    .delete(`http://localhost:8080/produtos/${id}`, { headers })
-    .then(() => {
-      alert("Livro vendido!");
-      console.log("Apagado");
-      setPosts(posts.filter((post) => post.id !== id));
-    })
-    .catch(() => {
-      console.error("Não encontrado");
-    });
+      .delete(`http://localhost:8080/produtos/${id}`, { headers })
+      .then(() => {
+        alert("Livro vendido!");
+        console.log("Apagado");
+        setPosts(posts.filter((post) => post.id !== id));
+      })
+      .catch(() => {
+        console.error("Não encontrado");
+      });
   }
 
   return (
@@ -78,7 +77,7 @@ export default function Disponiveis() {
           </div>
         </main>
       ))}
-
+      <Footer />
     </div>
   );
 }
