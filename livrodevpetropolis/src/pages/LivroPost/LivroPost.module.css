@@ -1,47 +1,44 @@
 :root {
-  /* Variáveis de cores e estilo */
   --primary: #8b4513;
   --primary-hover: #a0522d;
   --border-radius: 10px;
-
   --footer-bg: #4a4a4a;
   --footer-text: #ffffff;
+  --bg-dark: #2a2a2a;
 }
 
 body {
-  /* Define a fonte principal e remove margens padrão */
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .main {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
   gap: 2rem;
   padding: 2rem;
   flex: 1;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 120px); 
+  margin-top: 60px; 
+  margin-bottom: 60px;
 }
 
-/* Caixa de imagem à esquerda */
-.imageBox {
-  flex: 1;
+.tableBox {
+  flex: 0 0 auto;
   max-width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.imageBox img {
-  width: 100%;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
 }
 
-/* Card de formulário à direita */
 .formWrapper {
-  flex: 2;
-<<<<<<< HEAD
+  flex: 0 0 auto;
   width: 100%;
   min-width: 300px;
   max-width: 600px;
@@ -51,11 +48,11 @@ body {
   border-radius: 15px;
   border: 2px solid #d2b48c;
   box-shadow: 0 4px 14px rgba(143, 19, 19, 0.1);
+}
 
 body.dark-mode .formWrapper {
   background: var(--bg-dark);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
->>>>>>> 3a924f4 (Atualizações dark)
 }
 
 .formWrapper h2 {
@@ -65,7 +62,6 @@ body.dark-mode .formWrapper {
   color: var(--primary);
 }
 
-/* Estilo do formulário */
 .form {
   display: flex;
   flex-direction: column;
@@ -96,10 +92,9 @@ body.dark-mode .formWrapper {
   margin-top: 0.25rem;
 }
 
-/* Botão de ação */
 .actions {
   display: flex;
-  justify-content: flex-space-between;
+  justify-content: flex-end;
   margin-top: 1rem;
 }
 
@@ -117,7 +112,6 @@ body.dark-mode .formWrapper {
 .actions button:hover {
   background-color: var(--primary-hover);
 }
-<<<<<<< HEAD
 
 .logo {
   max-width: 240px;
@@ -174,6 +168,8 @@ body.dark-mode .formWrapper {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    margin-top: 65px;
+    margin-bottom: 65px;
   }
 
   .formWrapper {
@@ -187,26 +183,30 @@ body.dark-mode .formWrapper {
     min-width: 300px;
   }
 
-}
-
-.footer {
-  padding: 1.5rem 1rem;
+  .footer {
+    padding: 1.5rem 1rem;
+  }
 }
 
 @media (max-width: 768px) {
   .main {
     padding: 1rem;
+    margin-top: 80px; 
+    margin-bottom: 120px; 
+    min-height: calc(100vh - 200px); 
   }
   
   .formWrapper {
     width: 90%;
     min-width: 280px;
     padding: 1.5rem;
+    margin: 10px 0; 
   }
 
   .tableBox {
     max-width: 90%;
     min-width: 280px;
+    margin-bottom: 1rem;
   }
 
   .actions {
@@ -217,23 +217,31 @@ body.dark-mode .formWrapper {
     width: 100%;
     max-width: 200px;
   }
-}
 
-.footer {
-  padding: 1.5rem 0.5rem;
-  font-size: 0.85rem;
-}
+  .footer {
+    padding: 1.5rem 0.5rem;
+    font-size: 0.85rem;
+  }
 
-.footer-links a {
-  display: block;
-  margin: 0.5rem 0;
+  .footer-links a {
+    display: block;
+    margin: 0.5rem 0;
+  }
 }
 
 @media (max-width: 480px) {
+  .main {
+    margin-top: 90px;
+    margin-bottom: 140px; 
+    padding: 0.5rem;
+    min-height: calc(100vh - 230px); 
+  }
+
   .formWrapper {
     width: 95%;
     min-width: 250px;
     padding: 1.2rem;
+    margin: 5px 0; 
   }
 
   .tableBox {
@@ -251,12 +259,10 @@ body.dark-mode .formWrapper {
     padding: 0.6rem;
   }
 
-
   .actions button {
     font-size: 0.95rem;
     padding: 0.6rem;
   }
-
 }
 
 @media (max-width: 360px) {

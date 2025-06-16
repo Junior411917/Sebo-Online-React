@@ -1,164 +1,286 @@
-<<<<<<< HEAD
 .header {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
+   background-color: #333;
+   color: #fff;
+   padding: 1rem;
+   text-align: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   min-height: 80px;
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+   max-width: 800px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative; 
+   padding-right: 70px;
 }
 
 .backButton {
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s ease-in-out;
+   background-color: #4caf50;
+   color: #fff;
+   border: none;
+   padding: 0.5rem 1rem;
+   font-size: 1.2rem;
+   cursor: pointer;
+   border-radius: 0.5rem;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   transition: background-color 0.2s ease-in-out;
 }
 
 .backButton:hover {
-  background-color: #3e8e41;
+   background-color: #3e8e41;
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0 1rem;
+   font-size: 2rem;
+   font-weight: bold;
+   margin: 0 1rem;
 }
 
 .voltarLogin {
-  background-color: #666;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  cursor: pointer;
+   background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+   color: #fff;
+   text-decoration: none;
+   border: none;
+   padding: 0.75rem 1.5rem;
+   font-size: 1rem;
+   font-weight: 600;
+   cursor: pointer;
+   border-radius: 25px;
+   box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   border: 2px solid transparent;
+   position: relative;
+   overflow: hidden;
+}
+
+.voltarLogin::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+   transition: left 0.5s;
+}
+
+.voltarLogin:hover::before {
+   left: 100%;
 }
 
 .voltarLogin:hover {
-  background-color: #777;
+   background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+   transform: translateY(-2px);
+   box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+   border-color: rgba(255, 255, 255, 0.2);
 }
-.backButton:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-=======
-main header {
-            display: flex;
-    }
-       .cards .card h2 {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 500px;
-    }
-       img {
-            width: 20px;
-            margin-left: 40px;
-               cursor: pointer;
-    }
-       .modal {
-            width: 80px;
-            height: 100px;
-            background-color: white;
-    }
-       main .cards{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-               margin-top: 1rem;
-    }
-       main .cards .card {
-            margin: 0 auto;
-               background-color: #2F3644;
-               padding: 30px 40px;
-            width: 600px;
-               border-radius: 7px;
-            margin-top: 40px;
-       }
-       .cards .card header {
-            display: flex;
-            justify-content: space-between;
-               margin-bottom: 15px;
-    }
-       .card header h2 {
-            font-family: Noto Sans;
-            font-weight: 700;
-               color: #D2DAF5;
-               font-size: 1.7rem;
-    }
-       .line {
-            background-color: #3E445B;
-            height: 2px;
-    }
-       p {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            
-            max-width: 500px;
-               font-family: Noto Sans;
-            font-weight: 500;
-               color: #B3BACF;
-    }
-       .btns {
-            display: flex;
-            justify-content: space-between;
-               margin-top: 30px;
-    }
-       .btns button {
-            color: rgba(255, 255, 255, 0.938);
-            font-size: 1.3rem;
-            border: 0;
-               border-radius: 10px;
-               font-family: Heebo;
-            font-weight: 700;
-            
-            cursor: pointer;
-               padding: 5px 40px;
-    }
-       .btnEdit button{
-            background-color: #80D8FF;
-    }
-       .btnReadMore button{
-            background-color: #3DECB1;
-            
-    }
-       .btnDelete button{
-            background-color: rgb(241, 45, 45);
-    }
-       .loading {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-    }
-    
-    /* /src/components/Header.module.css */
+
+.voltarLogin:active {
+   transform: translateY(0);
+   box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.voltarLogin:focus {
+   outline: none;
+   box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+}
 .header {
-  position: relative;
-  width: 100%;
-  padding: 10px;
+   background-color: #333;
+   color: #fff;
+   padding: 1rem;
+   text-align: center;
+   position: fixed;  
+   top: 0;          
+   left: 0;        
+   width: 100%;     
+   z-index: 1000;  
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.main header {
+      display: flex;
+}
+.cards .card h2 {
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 500px;
+}
+img {
+   width: 20px;
+   margin-left: 40px;
+   cursor: pointer;
+}
+.modal {
+   width: 80px;
+   height: 100px;
+   background-color: white;
+}
+main .cards{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 1rem;
+}
+main .cards .card {
+   margin: 0 auto;
+   background-color: #2F3644;
+   padding: 30px 40px;
+   width: 600px;
+   border-radius: 7px;
+   margin-top: 40px;
+}
+.cards .card header {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 15px;
+}
+.card header h2 {
+   font-family: Noto Sans;
+   font-weight: 700;
+   color: #D2DAF5;
+   font-size: 1.7rem;
+}
+.line {
+   background-color: #3E445B;
+   height: 2px;
+}
+p {
+   margin-top: 20px;
+   font-size: 1.2rem;
+   max-width: 500px;
+   font-family: Noto Sans;
+   font-weight: 500;
+   color: #B3BACF;
+}
+.btns {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 30px;
+}
+.btns button {
+   color: rgba(255, 255, 255, 0.938);
+   font-size: 1.3rem;
+   border: 0;
+   border-radius: 10px;
+   font-family: Heebo;
+   font-weight: 700;
+   cursor: pointer;
+   padding: 5px 40px;
+}
+.btnEdit button{
+   background-color: #80D8FF;
+}
+.btnReadMore button{
+   background-color: #3DECB1;
+}
+.btnDelete button{
+   background-color: rgb(241, 45, 45);
+}
+.loading {
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.header {
+   position: relative;
+   width: 100%;
+   padding: 10px;
 }
 
 .themeToggle {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  background-color: transparent;
-  font-size: 24px;
-  cursor: pointer;
-    align-items: center;
->>>>>>> 3a924f4 (Atualizações dark)
+position: absolute;
+top: 15px;
+right: 15px;
+width: 50px;
+height: 50px;
+border: none;
+border-radius: 50%;
+background-color: #555; 
+font-size: 24px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 1001; 
+transition: background-color 0.3s;
+}
+
+.themeToggle:hover {
+   background-color: #777;
+}
+
+@media (max-width: 768px) {
+   .container {
+      padding-right: 65px; 
+   }
+
+   .themeToggle {
+      width: 45px;
+      height: 45px;
+      top: 12px;
+      right: 12px;
+      font-size: 20px;
+   }
+
+   .voltarLogin {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+   }
+}
+
+@media (max-width: 480px) {
+   .container {
+      padding-right: 60px; 
+      flex-wrap: wrap; 
+   }
+   
+   .themeToggle {
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      right: 10px;
+      font-size: 18px;
+   }
+   
+   .voltarLogin {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+   }
+   
+   .logo {
+      font-size: 1.5rem; 
+   }
+}
+
+@media (max-width: 320px) {
+   .container {
+      padding-right: 55px;
+      flex-direction: column;
+      gap: 0.5rem;
+   }
+   
+   .header {
+      min-height: 100px; 
+      padding: 0.5rem;
+   }
+   
+   .themeToggle {
+      top: 5px;
+      right: 5px;
+      width: 35px;
+      height: 35px;
+      font-size: 16px;
+   }
 }
