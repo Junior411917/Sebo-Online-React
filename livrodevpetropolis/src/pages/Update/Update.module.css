@@ -16,19 +16,35 @@ body {
 .main {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
   flex-wrap: wrap;
-  width: 100%;
+  /* width: 100%; */
 }
 
-/* Imagem grande à esquerda */
 .tableBox {
-  flex: 1;
-  max-width: 200px;
-  width: 50%;
+  flex: 0 0 auto;
+  max-width: 300px;
+  min-width: 250px;
+  /* width: 50%;
   height: auto;
   border-radius: 12px;
   object-fit: contain;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1); */
+}
+
+.formWrapper {
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 20px;
+  background: #f5f5dc;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #d2b48c;
+  box-shadow: 0 4px 14px rgba(143, 19, 19, 0.1);
 }
 
 .formWrapper h2 {

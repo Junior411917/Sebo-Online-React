@@ -70,18 +70,18 @@ export default function Update() {
   return (
     <div className={styles.container}>
       <Header />
+      
+      <main className={styles.main}>
 
       <div className={styles.tableBox}>
         <CatTable />
       </div>
-
-      
-
         
-      <main className={styles.main}>
         <section className={styles.formWrapper}>
           <h2>Editar Livro – DevPetrópolis</h2>
+          
           <form onSubmit={handleSubmit(atualizarLivro)} className={styles.form}>
+            
             <div className={styles.field}>
               <label htmlFor="nome">Livro</label>
               <input type="text" id="nome" {...register("nome")} />
@@ -109,6 +109,7 @@ export default function Update() {
             <div className={styles.actions}>
               <button type="submit">Salvar</button>
             </div>
+            
           </form>
         </section>
       </main>
