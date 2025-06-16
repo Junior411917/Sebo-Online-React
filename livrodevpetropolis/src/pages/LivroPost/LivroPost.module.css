@@ -60,10 +60,14 @@ body {
 .formWrapper {
   /* Área do formulário com estilo de cartão */
   flex: 2;
+  width: 100%;
   min-width: 300px;
+  max-width: 600px;
+  margin: 20px;
   background: #f5f5dc;
   padding: 2rem;
-  border-radius: var(--border-radius);
+  border-radius: 15px;
+  border: 2px solid #d2b48c;
   box-shadow: 0 4px 14px rgba(143, 19, 19, 0.1);
 }
 
@@ -182,18 +186,22 @@ body {
 
 @media (max-width: 1024px) {
   .main {
-    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
   }
 
   .formWrapper {
+    width: 80%;
+    min-width: 300px;
     padding: 1.5rem;
   }
 
-  .actions button {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+  .tableBox {
+    max-width: 80%;
+    min-width: 300px;
   }
+
 }
 
 .footer {
@@ -202,23 +210,18 @@ body {
 
 @media (max-width: 768px) {
   .main {
-    flex-direction: column;
-    align-items: center;
     padding: 1rem;
   }
-
-  .imageBox {
-    max-width: 100%;
-  }
-
-  .imageBox img {
-    width: 100%;
-    max-width: 300px;
-  }
-
+  
   .formWrapper {
-    width: 100%;
-    max-width: 500px;
+    width: 90%;
+    min-width: 280px;
+    padding: 1.5rem;
+  }
+
+  .tableBox {
+    max-width: 90%;
+    min-width: 280px;
   }
 
   .actions {
@@ -243,7 +246,18 @@ body {
 
 @media (max-width: 480px) {
   .formWrapper {
-    padding: 1rem;
+    width: 95%;
+    min-width: 250px;
+    padding: 1.2rem;
+  }
+
+  .tableBox {
+    max-width: 95%;
+    min-width: 250px;
+  }
+
+  .formWrapper h2 {
+    font-size: 1.4rem;
   }
 
   .field input,
@@ -252,18 +266,12 @@ body {
     padding: 0.6rem;
   }
 
-  .formWrapper h2 {
-    font-size: 1.3rem;
-  }
 
   .actions button {
     font-size: 0.95rem;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem;
   }
 
-  .categorias {
-    font-size: 0.95rem;
-  }
 }
 
 @media (max-width: 360px) {

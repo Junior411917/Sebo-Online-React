@@ -6,6 +6,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
+import CatTable from "../../components/CatTable";
 
 const validationSchema = yup.object().shape({
   nome: yup.string().required("Informe o nome do livro"),
@@ -45,10 +46,12 @@ export default function LivroPost() {
   return (
     <div className={styles.container}>
       <Header />
+
       <main className={styles.main}>
-        <div className={styles.imageBox}>
-          <img src="src/assets/react.png" />
-        </div>
+
+      <div className={styles.tableBox}>
+        <CatTable />
+      </div>
 
         <section className={styles.formWrapper}>
           <h2>Livraria DevPetropolis</h2>

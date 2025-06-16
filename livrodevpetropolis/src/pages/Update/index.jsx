@@ -6,6 +6,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import CatTable from "../../components/CatTable";
 
 const validationSchema = yup.object().shape({
   nome: yup.string().required("Informe o nome do livro"),
@@ -69,18 +70,18 @@ export default function Update() {
   return (
     <div className={styles.container}>
       <Header />
-
-      <div className={styles.imageBox}>
-        <img src="src/assets/react.png" />
-      </div>
-
       
-
-        
       <main className={styles.main}>
+
+      <div className={styles.tableBox}>
+        <CatTable />
+      </div>
+        
         <section className={styles.formWrapper}>
           <h2>Editar Livro – DevPetrópolis</h2>
+          
           <form onSubmit={handleSubmit(atualizarLivro)} className={styles.form}>
+            
             <div className={styles.field}>
               <label htmlFor="nome">Livro</label>
               <input type="text" id="nome" {...register("nome")} />
@@ -108,6 +109,7 @@ export default function Update() {
             <div className={styles.actions}>
               <button type="submit">Salvar</button>
             </div>
+            
           </form>
         </section>
       </main>
