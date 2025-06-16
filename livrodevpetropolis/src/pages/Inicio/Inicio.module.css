@@ -1,69 +1,90 @@
+/* Wrapper da página garantindo altura mínima */
 .pageWrapper {
-  min-height: 100vh;
-}
-
-.mainContent {
-  min-height: calc(100vh - 200px); /* Aumentei bastante a margem */
+  min-height: 60vh; /* Garante que o conteúdo ocupe toda a tela */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  margin-top: 100px; /* Aumentei a margem do header */
-  margin-bottom: 100px; /* Aumentei a margem do footer */
+  flex-direction: column; /* Organiza o conteúdo em coluna */
+  justify-content: center; /* Centraliza verticalmente */
 }
 
+/* Estilização do conteúdo principal */
+.mainContent {
+  min-height: calc(20vh - 200px); /* Ajuste de altura considerando cabeçalho e rodapé */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  padding: 10px; /* Espaçamento interno */
+  margin: 50px 0; /* Adiciona margem no topo e na parte inferior */
+}
+
+/* Caixa de conteúdo */
 .container {
-  text-align: center;
-  border: 1px solid #8b4513;
-  padding: 40px;
-  border-radius: 40px;
-  width: 500px;
-  max-width: 90%;
-  background-color: #f5f5dc;
-  color: #2f1b14;
+  text-align: center; /* Centraliza o texto */
+  border: 2px solid #fdfdfd; /* Borda branca */
+  padding: 40px; /* Espaçamento interno */
+  border-radius: 30px; /* Bordas arredondadas */
+  width: 600px; /* Define tamanho fixo */
+  max-width: 90%; /* Responsividade */
+  background-color: #f5f5dc; /* Cor de fundo */
+  color: #2f1b14; /* Cor do texto */
+  box-shadow: 0px 4px 12px 2f1b14(0, 0, 0, 0.2); /* Adiciona uma sombra para profundidade */
 }
 
+/* Botões */
 .botoes {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+  flex-direction: column; /* Organiza verticalmente */
+  gap: 20px; /* Adiciona espaço entre os botões */
+  margin-top: 30px; /* Espaçamento superior */
 }
 
 button {
-  padding: 12px 24px;
-  background-color: #8b4513;
-  color: #f5f5dc;
-  border: none;
-  border-radius: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  padding: 14px 28px; /* Ajuste do tamanho */
+  background-color: #8b4513; /* Cor padrão */
+  color: #f5f5dc; /* Cor do texto */
+  border: none; /* Remove bordas */
+  border-radius: 12px; /* Bordas arredondadas */
+  font-weight: bold; /* Negrito */
+  cursor: pointer; /* Indicação de ação */
+  font-size: 1.2rem; /* Ajuste da fonte */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Suaviza transição */
 }
 
+/* Efeito de hover */
 button:hover {
-  background-color: #a0522d;
+  background-color: #000000; /* Cor ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento */
 }
 
+/* Estilização do corpo */
 body {
-  background-color: #deb887 !important;
-  margin: 0;
-  padding: 0;
+  background-color: #ffffff !important; /* Cor de fundo */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove espaçamentos padrões */
+}
+
+/* Estilos para telas menores */
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 15px;
+    margin: 80px 0;
+  }
+
+  .container {
+    max-width: 85%;
+    padding: 35px 25px;
+    border-radius: 25px;
+  }
 }
 
 @media (max-width: 768px) {
   .mainContent {
-    padding: 20px;
-    margin-top: 100px; 
-    margin-bottom: 120px; /* Footer maior no mobile */
-    min-height: calc(100vh - 220px);
+    padding: 15px;
+    margin: 60px 0;
   }
 
   .container {
     width: 90%;
     padding: 30px 20px;
-    border-radius: 30px;
   }
 
   button {
@@ -75,9 +96,7 @@ body {
 @media (max-width: 480px) {
   .mainContent {
     padding: 15px;
-    margin-top: 100px;
-    margin-bottom: 140px; /* Footer ainda maior no mobile pequeno */
-    min-height: calc(100vh - 240px);
+    margin: 50px 0;
   }
 
   .container {
@@ -88,14 +107,22 @@ body {
 
   button {
     font-size: 0.95rem;
-    padding: 8px;
+    padding: 10px;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
   .mainContent {
-    margin-top: 90px; /* Header menor neste breakpoint */
-    margin-bottom: 150px;
-    min-height: calc(100vh - 240px);
+    margin: 40px 0;
+  }
+
+  .container {
+    width: 98%;
+    padding: 20px 10px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px;
   }
 }
