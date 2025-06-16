@@ -5,6 +5,56 @@
 }
 
 body {
+  font-family: "Poppins", sans-serif;
   height: 100vh;
-  background-color: #252401;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
 }
+
+
+/* Modo Claro (padrão) */
+body.light-mode {
+  background-color: white;
+  color: #311706;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #140b05;
+}
+/* Estilização de links no modo escuro */
+body.dark-mode a {
+  color: #432568;
+}
+body.dark-mode a:hover {
+  color: #3700B3;
+}
+
+/* Estilização de botões no modo escuro */
+body.dark-mode button {
+  background-color: #311706;
+  color: #ffffff;
+  border: 1px solid #311706;
+}
+
+/* Estilos comuns para botões */
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para cabeçalhos, herdando a cor atual */
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  font-weight: 600;
+}
+/* Exemplo de estilização para scrollbars (Chrome, Edge, Safari) */
+body.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+

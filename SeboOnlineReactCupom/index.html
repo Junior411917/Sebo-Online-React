@@ -1,13 +1,58 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Moderno DevPetropolis</title>
+  <!-- Importa o Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+  <header class="site-header">
+    <div class="logo">DevPetropolis</div>
+    <nav class="primary-nav">
+      <a href="#">Início</a>
+      <a href="#">Livros</a>
+      <a href="#">Autores</a>
+      <a href="#">Contato</a>
+    </nav>
+    <button class="theme-toggle">🌙</button>
+  </header>
+  
+  <main class="main-content">
+    <section class="hero">
+      <h1>Bem-vindo ao DevPetropolis</h1>
+      <p>Descubra o melhor do mundo dos livros e inovações literárias.</p>
+      <a href="#" class="btn primary-btn">Descubra Mais</a>
+    </section>
+    
+    <section class="categories">
+      <h2>Categorias</h2>
+      <ul class="categorias">
+        <li>Romance</li>
+        <li>Aventura</li>
+        <li>Ficção</li>
+        <li>Tecnologia</li>
+        <li>História</li>
+      </ul>
+    </section>
+  </main>
+  
+  <footer class="site-footer">
+    <p>&copy; 2025 DevPetropolis. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Alterna entre modo claro e escuro
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+      themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
 </html>
