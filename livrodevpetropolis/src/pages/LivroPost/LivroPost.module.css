@@ -1,10 +1,9 @@
 :root {
-  /* Variáveis reutilizáveis para cores e estilos */
-  --primary-color: #8b4513;
+  /* Variáveis de cores e estilo */
+  --primary: #8b4513;
   --primary-hover: #a0522d;
-  --text-color: #2f1b14;
-  --error-color: #c00;
   --border-radius: 10px;
+
   --footer-bg: #4a4a4a;
   --footer-text: #ffffff;
 }
@@ -15,51 +14,34 @@ body {
   margin: 0;
 }
 
+
 .main {
-  /* Alinha conteúdo ao centro e permite quebra de linha */
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   gap: 2rem;
   padding: 2rem;
   flex: 1;
 }
 
+/* Caixa de imagem à esquerda */
 .imageBox {
-  /* Responsável por exibir a imagem com limite de largura */
   flex: 1;
-  max-width: 280px;
+  max-width: 300px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 .imageBox img {
-  /* Garante que a imagem se ajuste bem ao espaço */
-  width: 80%;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
   border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.categorias {
-  /* Lista de categorias de forma limpa (sem bolinhas) */
-  list-style: none;
-  margin-top: 1rem;
-  padding: 0;
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
-.categorias li {
-  /* Espaçamento entre os itens da lista */
-  margin: 0.4rem 0;
-}
-
+/* Card de formulário à direita */
 .formWrapper {
-  /* Área do formulário com estilo de cartão */
   flex: 2;
+<<<<<<< HEAD
   width: 100%;
   min-width: 300px;
   max-width: 600px;
@@ -69,16 +51,22 @@ body {
   border-radius: 15px;
   border: 2px solid #d2b48c;
   box-shadow: 0 4px 14px rgba(143, 19, 19, 0.1);
+
+body.dark-mode .formWrapper {
+  background: var(--bg-dark);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+>>>>>>> 3a924f4 (Atualizações dark)
 }
 
 .formWrapper h2 {
-  /* Centraliza o título do formulário */
   text-align: center;
   margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--primary);
 }
 
+/* Estilo do formulário */
 .form {
-  /* Organiza os campos do formulário em coluna */
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -90,38 +78,34 @@ body {
 }
 
 .field label {
-  /* Dá destaque ao nome do campo */
   font-weight: bold;
   margin-bottom: 0.3rem;
 }
 
 .field input,
 .field select {
-  /* Aparência dos inputs e selects */
   padding: 0.75rem;
-  border: 1px solid #8b4513;
+  border: 1px solid var(--primary);
   border-radius: 6px;
   font-size: 1rem;
 }
 
 .field span {
-  /* Estilo da mensagem de erro */
-  color: var(--error-color);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--primary);
   margin-top: 0.25rem;
 }
 
+/* Botão de ação */
 .actions {
-  /* Alinha o botão à direita */
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-space-between;
   margin-top: 1rem;
 }
 
 .actions button {
-  /* Botão bonito, com hover azul escuro */
-  background-color: var(--primary-color);
-  color: #f5f5dc;
+  background-color: var(--primary);
+  color: #fff;
   padding: 0.75rem 1.4rem;
   border: none;
   border-radius: 6px;
@@ -133,6 +117,7 @@ body {
 .actions button:hover {
   background-color: var(--primary-hover);
 }
+<<<<<<< HEAD
 
 .logo {
   max-width: 240px;

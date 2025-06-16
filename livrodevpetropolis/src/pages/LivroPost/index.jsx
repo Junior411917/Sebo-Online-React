@@ -33,7 +33,6 @@ export default function LivroPost() {
   const cadastrarLivro = (data) => {
     const token = localStorage.getItem("token");
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
-
     axios
       .post("http://localhost:8080/produtos", data, { headers })
       .then(() => {
@@ -54,20 +53,18 @@ export default function LivroPost() {
       </div>
 
         <section className={styles.formWrapper}>
-          <h2>Livraria DevPetropolis</h2>
+          <h2>Cadastro de Livro</h2>
           <form onSubmit={handleSubmit(cadastrarLivro)} className={styles.form}>
             <div className={styles.field}>
-              <label htmlFor="nome">Livro</label>
+              <label htmlFor="nome">Nome do Livro</label>
               <input type="text" id="nome" {...register("nome")} />
               <span>{errors.nome?.message}</span>
             </div>
-
             <div className={styles.field}>
               <label htmlFor="isbn">ISBN</label>
               <input type="text" id="isbn" {...register("isbn")} />
               <span>{errors.isbn?.message}</span>
             </div>
-
             <div className={styles.field}>
               <label htmlFor="preco">Preço</label>
               <input
@@ -78,17 +75,15 @@ export default function LivroPost() {
               />
               <span>{errors.preco?.message}</span>
             </div>
-
             <div className={styles.field}>
               <label htmlFor="categoriaId">Gênero (somente número)</label>
               <input
                 type="number"
                 id="categoriaId"
                 {...register("categoriaId")}
-              />
+              /> 
               <span>{errors.categoriaId?.message}</span>
             </div>
-
             <div className={styles.actions}>
               <button type="submit">Salvar</button>
             </div>
