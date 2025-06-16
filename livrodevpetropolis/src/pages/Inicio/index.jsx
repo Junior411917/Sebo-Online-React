@@ -9,7 +9,7 @@ export default function Inicio() {
       <Header />
       <main className={styles.mainContent}>
         <div className={styles.container}>
-          <h1>BEM VINDOS AO SEBO</h1>
+          <h1>BEM VINDOS AO SEBO!</h1>
           <div className={styles.botoes}>
             <Link to="/disponiveis">
               <button>LIVROS DISPONÍVEIS</button>

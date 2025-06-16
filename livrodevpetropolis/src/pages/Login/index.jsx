@@ -3,18 +3,25 @@ import * as styles from "./Login.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 export default function Login() {
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [formError, setFormError] = useState(''); // Mensagem de erro para campos vazios
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    setLoading(true);
     setError('');
+    setFormError('');
+
+    // Verifica se os campos estão preenchidos
+    if (!username || !password) {
+      setFormError("Por favor, adicione o email e a senha.");
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const response = await axios.post('http://localhost:8080/auth/login',{
@@ -27,29 +34,26 @@ export default function Login() {
 
       navigate('/inicio');
 
-    }catch (err){
-      if (err.response && err.response.status ===401){
+    } catch (err) {
+      if (err.response && err.response.status === 401) {
         setError('Email ou senha inválidos');
-      }else{
+      } else {
         setError('Erro de conexão com a API');
       }
 
-      setTimeout(()=>{
+      setTimeout(() => {
         window.location.reload();
-      },2000);
-    }finally{
+      }, 2000);
+    } finally {
       setLoading(false);
     }
   };
 
-
-const handleKeyPress = (e) =>{
-  if (e.key === 'Enter' && username && password && !loading){
-    handleLogin();
-  }
-};
-
-
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && username && password && !loading) {
+      handleLogin();
+    }
+  };
 
   return (  
     <div className={styles.container}>
@@ -69,7 +73,7 @@ const handleKeyPress = (e) =>{
               placeholder="email"
               className={styles.input}
               value={username}
-              onChange={(e)=>setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
               onKeyPress={handleKeyPress}
               disabled={loading}
             />
@@ -78,15 +82,23 @@ const handleKeyPress = (e) =>{
           <div className={styles.inputGroup}>
             <input 
               type="password" 
-              placeholder="password"
+              placeholder="senha"
               className={styles.input}
               value={password}
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               onKeyPress={handleKeyPress}
               disabled={loading}
             />
           </div>
 
+          {/* Mensagem de erro se o usuário não preencher email ou senha */}
+          {formError && (
+            <div className={styles.errorAlert}>
+              {formError}
+            </div>
+          )}
+
+          {/* Mensagem de erro ao tentar login com credenciais erradas */}
           {error && (
             <div className={styles.errorAlert}>
               {error}
@@ -96,16 +108,16 @@ const handleKeyPress = (e) =>{
           <button onClick={handleLogin} className={styles.loginBtn} disabled={loading || !username || !password}>
             {loading ? "Entrando..." : "Entrar"}
           </button>
+
+          <a href="/recuperar-senha" className={styles.forgotPassword}>
+            Esqueceu sua senha?
+          </a>
         </div>
         
         <div className={styles.footer}>
           <p>Sistema de Sebo Dev</p>
         </div>
-
-
-
       </div>
-
     </div>
   );
 };

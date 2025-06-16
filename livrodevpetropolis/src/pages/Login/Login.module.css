@@ -4,17 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #deb887 0%, #a0522d 50%, #8b4513 100%);
+  background: linear-gradient(135deg, #deca87 0%, #774401 50%, #582f00 100%);
   padding: 20px;
   font-family: "Noto Sans", sans-serif;
-}
-
-/* Cards container */
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 1rem;
 }
 
 /* Card de login */
@@ -30,29 +22,17 @@
 /* Cabeçalho */
 .header {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
   flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+  margin-bottom: 15px;
 }
 
-.header h2 {
+.title {
   font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   color: #8b4513;
-  font-size: 1.7rem;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 500px;
-}
-
-.header p {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  max-width: 500px;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 500;
-  color: #2f1b14;
+  font-size: 1.8rem;
+  text-align: center; /* Centraliza texto */
 }
 
 /* Linha separadora */
@@ -95,22 +75,11 @@
   box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.2);
 }
 
-.input:disabled {
-  background: #deb887;
-  color: #2f1b14;
-  cursor: not-allowed;
-}
-
-.input::placeholder {
-  color: #8b4513;
-  font-weight: 400;
-}
-
 /* Botão de login */
 .loginBtn {
-  color: #f5f5dc;
+  color: #fff;
   font-size: 1.3rem;
-  border: 0;
+  border: none;
   border-radius: 10px;
   font-family: "Heebo", sans-serif;
   font-weight: 700;
@@ -127,55 +96,19 @@
   transform: translateY(-2px);
 }
 
-.loginBtn:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-.loginBtn:disabled {
-  background: #deb887;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Alert de erro */
-.errorAlert {
-  background-color: #fed7d7;
-  color: #c53030;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  border: 1px solid #feb2b2;
+/* Link "Esqueceu sua senha?" */
+.forgotPassword {
+  display: block;
+  margin-top: 10px;
   text-align: center;
-  font-family: "Noto Sans", sans-serif;
-}
-
-/* Footer */
-.footer {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.footer p {
-  margin: 4px 0;
   font-size: 1rem;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 500;
-  color: #2f1b14;
-}
-
-.footer p:first-child {
-  font-weight: 600;
   color: #8b4513;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Loading */
-.loading {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #deb887 0%, #a0522d 50%, #8b4513 100%);
+.forgotPassword:hover {
+  color: #a0522d;
 }
 
 /* Responsividade */
@@ -184,104 +117,8 @@
     width: 90%;
     padding: 25px 30px;
   }
-}
 
-@media (max-width: 480px) {
-  .container {
-    padding: 16px;
-  }
-
-  .loginCard {
-    width: 100%;
-    padding: 20px 25px;
-    margin-top: 20px;
-  }
-
-  .header h2 {
-    font-size: 1.5rem;
-  }
-
-  .header p {
-    font-size: 1.1rem;
-  }
-
-  .input {
-    padding: 10px 14px;
-    font-size: 16px;
-  }
-
-  .loginBtn {
-    padding: 10px 30px;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .loginCard {
-    width: 95%;
-    padding: 25px;
-  }
-
-  .header h2 {
+  .title {
     font-size: 1.6rem;
-  }
-
-  .header p {
-    font-size: 1.1rem;
-  }
-
-  .loginBtn {
-    font-size: 1.2rem;
-    padding: 12px 30px;
-  }
-}
-
-@media (max-width: 680px) {
-  .loginCard {
-    width: 90%;
-    padding: 25px 30px;
-  }
-
-  .header h2 {
-    font-size: 1.5rem;
-  }
-
-  .header p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 16px;
-    align-items: stretch;
-  }
-
-  .loginCard {
-    width: 100%;
-    padding: 20px 20px;
-    margin-top: 20px;
-  }
-
-  .header h2 {
-    font-size: 1.4rem;
-  }
-
-  .header p {
-    font-size: 1rem;
-  }
-
-  .input {
-    padding: 10px 12px;
-    font-size: 15px;
-  }
-
-  .loginBtn {
-    padding: 10px 25px;
-    font-size: 1.1rem;
-  }
-
-  .footer p {
-    font-size: 0.95rem;
   }
 }

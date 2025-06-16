@@ -42,6 +42,7 @@
    font-size: 2rem;
    font-weight: bold;
    margin: 0 1rem;
+   color: #fff;
 }
 
 .voltarLogin {
@@ -261,6 +262,8 @@ transition: background-color 0.3s;
    
    .logo {
       font-size: 1.5rem; 
+       
+      
    }
 }
 
