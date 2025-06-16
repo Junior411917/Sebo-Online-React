@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import Header from "../../components/HeaderMain";
 import { useForm } from "react-hook-form";
 import * as styles from "./Update.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import CatTable from "../../components/CatTable";
+import Footer from "../../components/Footer";
 
 const validationSchema = yup.object().shape({
   nome: yup.string().required("Informe o nome do livro"),
@@ -113,6 +114,7 @@ export default function Update() {
           </form>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
