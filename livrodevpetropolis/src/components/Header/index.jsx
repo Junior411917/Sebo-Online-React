@@ -17,6 +17,12 @@ export default function HeaderMain() {
   };
   return (
     <header className={styles.header}>
+      <div className={styles.container}>
+        <Link to="/" className={styles.voltarLogin}>
+          <span>🏠</span>
+          Login
+        </Link>
+        <h1 className={styles.logo}>Livraria Dev Petrópolis</h1>
       <button
         id="toggleMode"
         className={`${styles.themeToggle} ${isChanging ? styles.changing : ''}`} 
@@ -27,12 +33,6 @@ export default function HeaderMain() {
       >
         {darkMode ? "☀️" : "🌙"}
       </button>
-      <div className={styles.container}>
-        <h1 className={styles.logo}>Livraria Dev Petrópolis</h1>
-        <Link to="/" className={styles.voltarLogin}>
-          <span>🏠</span>
-          Login
-        </Link>
       </div>
     </header>
   );

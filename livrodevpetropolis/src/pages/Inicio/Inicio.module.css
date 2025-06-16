@@ -1,6 +1,6 @@
 /* Wrapper da página garantindo altura mínima */
 .pageWrapper {
-  min-height: 60vh; /* Garante que o conteúdo ocupe toda a tela */
+  /* min-height: 60vh; Garante que o conteúdo ocupe toda a tela */
   display: flex;
   flex-direction: column; /* Organiza o conteúdo em coluna */
   justify-content: center; /* Centraliza verticalmente */

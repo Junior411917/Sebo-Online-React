@@ -1,3 +1,7 @@
+body{
+   margin: 0;
+   padding: 0;
+}
 .header {
    background-color: #333;
    color: #fff;
@@ -6,17 +10,18 @@
    position: fixed;
    top: 0;
    left: 0;
-   width: 100%;
+   width: 80%;
    z-index: 1000;
    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-   min-height: 80px;
+   min-height: 100px;
+   margin: 0;
 }
 
 .container {
-   max-width: 800px;
+   max-width: 1200px;
    margin: 0 auto;
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
    position: relative; 
    padding-right: 70px;
@@ -41,8 +46,10 @@
 .logo {
    font-size: 2rem;
    font-weight: bold;
-   margin: 0 1rem;
+   margin: 0 ;
    color: #fff;
+   text-align: center;
+   flex: 1;
 }
 
 .voltarLogin {
@@ -202,8 +209,8 @@ p {
 
 .themeToggle {
 position: absolute;
-top: 15px;
-right: 15px;
+top: 8px;
+right: 75px;
 width: 50px;
 height: 50px;
 border: none;
@@ -224,7 +231,8 @@ transition: background-color 0.3s;
 
 @media (max-width: 768px) {
    .container {
-      padding-right: 65px; 
+      padding-right: 65px;
+      
    }
 
    .themeToggle {
@@ -262,8 +270,6 @@ transition: background-color 0.3s;
    
    .logo {
       font-size: 1.5rem; 
-       
-      
    }
 }
 
