@@ -2,7 +2,7 @@
 h1 {
   margin-left: 0;
   margin-bottom: 80px;
-  color: #2f1b14;
+  color: #163123;
   text-align: center;
 }
 
@@ -32,7 +32,7 @@ h1 {
 
 /* Estilos dos blocos internos do card */
 .primeiro {
-  background-color: #deb887;
+  background-color: #8b4513;
   padding: 15px;
   border-radius: 12px;
   margin-bottom: 10px;
@@ -40,22 +40,46 @@ h1 {
 
 .segundo {
   background-color: #8b4513;
-  color: #f5f5dc;
+  color: #8b4513;
   padding: 15px;
   border-radius: 12px;
   margin-bottom: 10px;
 }
 
 .terceiro {
-  background-color: #a0522d;
-  color: #f5f5dc;
+  background-color: #8b4513;
+  color: #8b4513;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.quarto {
+  background-color: #8b4513;
+  color: #8b4513;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.quinto {
+  background-color: #8b4513;
+  color: #8b4513;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.sexto {
+  background-color: #8b4513;
+  color: #8b4513;
   padding: 15px;
   border-radius: 12px;
   margin-bottom: 10px;
 }
 
 .card p {
-  color: #2f1b14;
+  color: #ffffff;
   margin: 10px 0;
   font-size: 18px;
   word-wrap: break-word;
@@ -64,8 +88,8 @@ h1 {
 .card a {
   font-family: Arial, Helvetica, sans-serif;
   display: block;
-  background-color: #8b4513;
-  color: #f5f5dc;
+  background-color: #08c50e;
+  color: #ffffff;
   text-align: center;
   padding: 10px;
   border-radius: 8px;

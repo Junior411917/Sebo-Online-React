@@ -1,10 +1,11 @@
-import Header from "../../components/Header";
+import Header from "../../components/HeaderMain";
 import { useForm } from "react-hook-form";
 import * as styles from "./LivroPost.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 const validationSchema = yup.object().shape({
   nome: yup.string().required("Informe o nome do livro"),
@@ -29,9 +30,8 @@ export default function LivroPost() {
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   const cadastrarLivro = (data) => {
-
-    const token = localStorage.getItem('token');
-    const headers = token ? {Authorization: `Bearer ${token}`} : {};
+    const token = localStorage.getItem("token");
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
     axios
       .post("http://localhost:8080/produtos", data, { headers })
@@ -46,7 +46,6 @@ export default function LivroPost() {
     <div className={styles.container}>
       <Header />
       <main className={styles.main}>
-        
         <div className={styles.imageBox}>
           <img src="src/assets/react.png" />
         </div>
@@ -68,13 +67,22 @@ export default function LivroPost() {
 
             <div className={styles.field}>
               <label htmlFor="preco">Preço</label>
-              <input type="number" id="preco" step="0.01" {...register("preco")} />
+              <input
+                type="number"
+                id="preco"
+                step="0.01"
+                {...register("preco")}
+              />
               <span>{errors.preco?.message}</span>
             </div>
 
             <div className={styles.field}>
               <label htmlFor="categoriaId">Gênero (somente número)</label>
-              <input type="number" id="categoriaId" {...register("categoriaId")} />
+              <input
+                type="number"
+                id="categoriaId"
+                {...register("categoriaId")}
+              />
               <span>{errors.categoriaId?.message}</span>
             </div>
 
@@ -84,6 +92,7 @@ export default function LivroPost() {
           </form>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

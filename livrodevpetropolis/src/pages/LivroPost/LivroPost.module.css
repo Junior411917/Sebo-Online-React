@@ -5,21 +5,14 @@
   --text-color: #2f1b14;
   --error-color: #c00;
   --border-radius: 10px;
+  --footer-bg: #4a4a4a;
+  --footer-text: #ffffff;
 }
 
 body {
   /* Define a fonte principal e remove margens padrão */
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-}
-
-.container {
-  /* Ocupa pelo menos a altura total da tela */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  background-color: #deb887;
 }
 
 .main {
@@ -29,6 +22,7 @@ body {
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
+  flex: 1;
 }
 
 .imageBox {
@@ -142,6 +136,50 @@ body {
   margin-bottom: 2rem;
 }
 
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer a {
+  color: var(--footer-text);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+}
+
+.github-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-top: 1rem;
+  fill: var(--footer-text);
+}
+
 @media (max-width: 1024px) {
   .main {
     padding: 1.5rem;
@@ -156,6 +194,10 @@ body {
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
   }
+}
+
+.footer {
+  padding: 1.5rem 1rem;
 }
 
 @media (max-width: 768px) {
@@ -189,6 +231,16 @@ body {
   }
 }
 
+.footer {
+  padding: 1.5rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.footer-links a {
+  display: block;
+  margin: 0.5rem 0;
+}
+
 @media (max-width: 480px) {
   .formWrapper {
     padding: 1rem;
@@ -211,5 +263,27 @@ body {
 
   .categorias {
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .formWrapper {
+    padding: 0.8rem;
+  }
+
+  .field input,
+  .field select {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .formWrapper h2 {
+    font-size: 1.1rem;
+  }
+
+  .actions button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    width: 100%;
   }
 }

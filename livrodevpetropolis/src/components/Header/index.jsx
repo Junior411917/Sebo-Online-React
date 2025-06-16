@@ -6,7 +6,9 @@ export default function HeaderMain() {
     <header className={styles.header}>
       <div className={styles.container}>
         <h1 className={styles.logo}>Livraria Dev Petrópolis</h1>
-        <Link to="/" className={styles.voltarLogin}>Voltar para login</Link>
+        <Link to="/" className={styles.voltarLogin}>
+          Voltar para a página inicial de login
+        </Link>
       </div>
     </header>
   );
