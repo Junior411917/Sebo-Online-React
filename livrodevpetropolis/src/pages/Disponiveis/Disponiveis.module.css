@@ -13,6 +13,13 @@ img {
   height: 100px;
   background-color: #f5f5dc;
 }
+
+main {
+  padding-top: clamp(20px, 8vh, 60px);
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
 main .cards {
   display: flex;
   color: #2f1b14;
@@ -27,7 +34,8 @@ main .cards .card {
   padding: 30px 40px;
   width: 600px;
   border-radius: 7px;
-  margin-top: 40px;
+  margin-top: clamp(20px, 5vh, 40px);
+  margin-bottom: 60px;
 }
 
 .cards .card header {
@@ -165,6 +173,7 @@ p {
 @media (max-width: 480px) {
   main .cards .card {
     padding: 20px;
+    margin-bottom: 150px;
   }
 
   .card header h2 {

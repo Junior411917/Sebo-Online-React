@@ -20,7 +20,7 @@
 /* ======================== */
 .container {
   max-width: 1200px; /* Define um tamanho máximo para limitar a largura */
-  margin: 2 auto; /* Centraliza o container na página */
+  margin: 0 auto; /* Centraliza o container na página */
   display: grid; /* Utiliza CSS Grid para organização dos itens */
   grid-template-columns: 1fr 2fr 1fr; /* Distribui o conteúdo em três colunas */
   align-items: center; /* Alinha verticalmente os elementos */
@@ -95,8 +95,8 @@
 
 /* Efeito de rotação ao mudar tema */
 .themeToggle.changing {
-  transform: rotate(360deg); /* Gira ao ativar mudança */
-  transition: transform 0.5s ease-in-out, background-color 0.3s; /* Suaviza transição */
+  transform: rotate(360deg); 
+  transition: transform 0.5s ease-in-out, background-color 0.3s;
 }
 
 /* Estilização ao focar */

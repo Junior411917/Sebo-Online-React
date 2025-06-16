@@ -1,9 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+main {
+  padding-top: clamp(20px, 8vh, 60px);
+  padding-bottom: clamp(20px, 5vh, 40px);
+  box-sizing: border-box;
+}
+
 /* Título */
 h1 {
-  margin-left: 0;
-  margin-bottom: 80px;
+  margin: clamp(50px, 2vh, 10px);
   color: #163123;
   text-align: center;
+  font-size: clamp(1rem, 3vw, 2.2rem);
 }
 
 /* Container de todos os cards */
@@ -12,10 +25,12 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  padding: clamp(10px, 4vw, 20px);
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
   gap: 20px; /* espaçamento entre cards */
+  width: 100%;
 }
 
 /* Estilo de cada card */
@@ -28,6 +43,7 @@ h1 {
   max-width: 400px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  flex: 1 1 auto;
 }
 
 /* Estilos dos blocos internos do card */
